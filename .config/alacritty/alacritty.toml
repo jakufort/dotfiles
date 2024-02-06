@@ -1,0 +1,30 @@
+[colors.bright]
+black = "#88807c"
+blue = "#48b9c7"
+cyan = "#34e2e2"
+green = "#73c48f"
+magenta = "#ad7fa8"
+red = "#f15d22"
+white = "#eeeeec"
+yellow = "#ffce51"
+
+[colors.normal]
+black = "#333333"
+blue = "#3465a4"
+cyan = "#06989a"
+green = "#4e9a06"
+magenta = "#75507b"
+red = "#cc0000"
+white = "#d3d7cf"
+yellow = "#c4a000"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[shell]
+args = ["--login", "-c", "zellij attach --index 0 || zellij"]
+program = "/usr/bin/zsh"
+
+[window]
+opacity=0.95

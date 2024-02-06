@@ -1,0 +1,20 @@
+[global_config]
+  geometry_hinting = True
+[keybindings]
+  split_horiz = <Shift><Alt>d
+  split_vert = <Alt>d
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    background_image = /home/jakufort/Pictures/tapety/in_use/daisuke7.png
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
