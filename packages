@@ -1,0 +1,37 @@
+fzf
+jq
+htop
+cheat-bin
+ttf-jetbrains-mono-nerd
+ripgrep
+gitui
+neovim
+mise-bin
+cmus
+cmusfm
+starship
+eza
+bat
+zsh
+zoxide
+gsimplecal
+git-crypt
+wezterm
+nordvpn-bin
+
+# gui
+flameshot
+
+# i3
+dunst
+feh
+rofi
+polybar
+snixembed
+redshift
+
+# hyprland
+hyprshade
+swaybg
+wl-paste
+wofi

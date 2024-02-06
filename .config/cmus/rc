@@ -1,0 +1,6 @@
+set status_display_program=cmusfm
+
+set lib_sort=albumartist date album discnumber tracknumber title filename
+
+set format_playlist= %-21%{artist} %-20%{album} %3n. %{title}%= %{duration} %{codec} %{bitrate}Kbps
+set format_playlist_va= %-21%{albumartist} %-20%{album} %3n. %{title} (%{artist})%= %{duration} %{codec} %{bitrate}Kbps
