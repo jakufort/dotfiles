@@ -23,6 +23,7 @@ nordvpn-bin
 flameshot
 
 # i3
+i3
 dunst
 feh
 rofi
@@ -31,6 +32,7 @@ snixembed
 redshift
 
 # hyprland
+hyprland
 hyprshade
 swaybg
 wl-paste
