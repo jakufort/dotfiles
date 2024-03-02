@@ -228,7 +228,7 @@ assign [class="Slack"] $slack
 
 # Startup 
 exec --no-startup-id picom -b
-exec --no-startup-id feh --randomize --no-fehbg --bg-fill $HOME/Pictures/tapety/in_use/*
+exec --no-startup-id feh --randomize --no-fehbg --bg-fill $HOME/.config/wallpapers/*
 exec --no-startup-id dunst
 exec --no-startup-id /usr/bin/firefox
 exec --no-startup-id /usr/bin/slack
