@@ -30,6 +30,7 @@ rofi
 polybar
 snixembed
 redshift
+playerctl
 
 # hyprland
 hyprland
