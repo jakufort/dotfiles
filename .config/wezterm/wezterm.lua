@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'rose-pine-moon'
-config.font = wezterm.font 'JetBrains Mono NL'
+config.font = wezterm.font 'JetBrainsMonoNL Nerd Font'
 config.window_background_opacity = 0.9
 config.hide_tab_bar_if_only_one_tab = true
 
