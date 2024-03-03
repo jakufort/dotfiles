@@ -17,7 +17,7 @@ alias vim=nvim
 alias ls=eza
 alias xl='eza -lg --icons --color=always'
 alias xll='eza -lag --icons --color=always'
-alias cat=bat
+alias cat=batcat
 
 ### FZF
 source /usr/share/fzf/key-bindings.zsh
