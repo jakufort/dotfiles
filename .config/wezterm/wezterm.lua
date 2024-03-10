@@ -28,7 +28,4 @@ config.keys = {
  }
 }
 
--- fixing hyprland
-config.enable_wayland = false
-
 return config
