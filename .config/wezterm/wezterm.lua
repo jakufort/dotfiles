@@ -6,6 +6,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.font_size = 18
+
 config.color_scheme = 'rose-pine-moon'
 config.font = wezterm.font 'JetBrains Mono NL'
 config.window_background_opacity = 0.9
