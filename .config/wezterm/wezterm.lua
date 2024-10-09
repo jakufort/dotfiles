@@ -6,7 +6,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.font_size = 18
+config.font_size = 22
 
 config.color_scheme = 'rose-pine-moon'
 config.font = wezterm.font 'JetBrains Mono NL'
@@ -28,6 +28,16 @@ config.keys = {
      domain = 'CurrentPaneDomain'
    }
  }
+}
+
+config.colors = {
+  selection_bg = '#444444',
+  split = '#ea9a97',
+}
+
+config.inactive_pane_hsb = {
+  saturation = 0.4,
+  brightness=  0.4,
 }
 
 config.enable_wayland = false
