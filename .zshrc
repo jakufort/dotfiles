@@ -9,7 +9,7 @@ plugins=(
     ssh-agent
 )
 
-zstyle :omz:plugins:ssh-agent identities id_github_qba1993
+zstyle :omz:plugins:ssh-agent identities id_ed25519
 
 source $ZSH/oh-my-zsh.sh
 
