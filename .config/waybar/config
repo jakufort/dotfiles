@@ -1,105 +1,72 @@
-// Global 
 {
     "layer": "top",
     "position": "top",
-
-    // If height property would be not present, it'd be calculated dynamically
     "height": 30,
-
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
     ],
- 
     "modules-center": [
-      "custom/music"
+        "custom/music"
     ],
-
     "modules-right": [
-        "network",
         "disk",
         "memory",
         "cpu",
         "temperature",
+        "custom/gputemp",
         "pulseaudio",
         "clock",
         "tray"
     ],
-
-    // modules left
-
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "disable-markup" : false,
+        "disable-markup": false,
         "all-outputs": true,
-        "format": "  {icon}  ",
-        //"format":"{icon}",
+        "format": "{icon}",
         "format-icons": {
             "1": "1 󰖟 ",
             "2": "2  ",
             "3": "3 󰒱 ",
-            "4": "4 ",
-            "5": "5 󰎆 ",
+            "5": "5 󰎆 "
         }
     },
-
     "hyprland/submap": {
         "format": "{}",
         "max-length": 100,
         "tooltip": false
     },
-
-    // Modules
-
-    "network": {
-        "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
-    },
-    "network#vpn": {
-        "interface": "tun0",
-        "format": "  {essid} ({signalStrength}%)",
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    },
-
     "disk": {
-      "internal": 30,
-      "format": "󰋊 {specific_free:0.2f} GB / {specific_total:0.2f} GB",
-      "unit": "GB"
+        "internal": 30,
+        "format": "󰋊 {free} / {total}",
+        "unit": "GB"
     },
-
     "memory": {
         "interval": 5,
-        "format": "  {used} GB / {total} GB",
+        "format": " {used}GB / {total}GB",
         "states": {
             "warning": 70,
             "critical": 90
         }
     },
-
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": " {usage}%",
         "states": {
             "warning": 70,
-            "critical": 90,
+            "critical": 90
         }
     },
-
     "temperature": {
         "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
         "format": "{temperatureC}°C"
     },
-
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "{volume}%  ",
+        "format-muted": "{volume}% ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -109,43 +76,49 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [""]
+            "default": [
+                ""
+            ]
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
     },
-
     "clock": {
-    	"format": "{:%d.%m.%Y %H:%M} ",
-    	"tooltip-format": "<tt><small>{calendar}</small></tt>",
-    	"calendar": {
-    		"mode"          : "month",
-    		"mode-mon-col"  : 3,
-    		"on-scroll"     : 1,
-    		"format": {
-    			"months":     "<span color='#ffead3'><b>{}</b></span>",
-    			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
-    			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-    			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-    			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-    		}
-    	},
-    	"actions": {
-    		"on-scroll-up": "shift_down",
-    		"on-scroll-down": "shift_up"
-    	}
+        "format": "{:%d.%m.%Y %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
     },
-
     "tray": {
         "icon-size": 18,
-        "spacing":10,
-     },
-
-     "custom/music": {
-       "format": "{}",
-       "interval": 5,
-       "exec": "~/.config/waybar/scripts/music.sh",
-       "tooltip": false
-     }
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "{}",
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/music.sh",
+        "tooltip": false,
+        "escape": true
+    },
+    "custom/gputemp": {
+        "format": "󰢮 {}°C",
+        "interval": 10,
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader",
+        "tooltip": false
+    }
 }
