@@ -1,6 +1,5 @@
 @define-color foreground #d1d6d7;
 @define-color background #666666;
-@define-color bar-background rgba(0, 0, 0, 0.0);
 @define-color workspace-selector #404040;
 @define-color submap #A39D6A;
 
@@ -11,7 +10,7 @@
 }
 
 window#waybar {
-    background-color: @bar-background;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #workspaces,
