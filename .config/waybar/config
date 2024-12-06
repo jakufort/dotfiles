@@ -110,10 +110,9 @@
     },
     "custom/music": {
         "format": "{}",
-        "interval": 1,
-        "exec": "~/.config/waybar/scripts/music.sh",
-        "tooltip": false,
-        "escape": true
+        "return-type": "json",
+        "max-length": 60,
+        "exec": "$HOME/.config/waybar/scripts/music.sh 2> /dev/null"
     },
     "custom/gputemp": {
         "format": "󰢮 {}°C",

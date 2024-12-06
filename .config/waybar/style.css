@@ -84,7 +84,7 @@ window#waybar {
 
 #custom-music {
     background-color: @background;
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 3px;
     border-radius: 20px;
 }
