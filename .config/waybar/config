@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 30,
+    "height": 40,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
@@ -105,7 +105,7 @@
         }
     },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 22,
         "spacing": 10
     },
     "custom/music": {

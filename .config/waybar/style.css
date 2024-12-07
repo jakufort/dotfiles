@@ -2,6 +2,7 @@
 @define-color background #666666;
 @define-color workspace-selector #404040;
 @define-color submap #A39D6A;
+@define-color bar #404040;
 
 * {
     font-family: JetBrainsMono;
@@ -10,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: @bar;
 }
 
 #workspaces,
