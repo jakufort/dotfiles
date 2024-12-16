@@ -1,6 +1,6 @@
 @define-color foreground #d1d6d7;
 @define-color background #666666;
-@define-color workspace-selector #404040;
+@define-color workspace-selector #666666;
 @define-color submap #A39D6A;
 @define-color bar #404040;
 
@@ -26,7 +26,7 @@ window#waybar {
 #custom-music {
     color: @foreground;
     background-color: @background;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 }
 
 #disk,
@@ -56,7 +56,7 @@ window#waybar {
 
 #workspaces {
     margin: 3px;
-    background-color: @background;
+    background-color: @bar;
     border-radius: 20px;
     margin-left: 20px;
 }
