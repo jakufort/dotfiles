@@ -1,5 +1,6 @@
 # [Created by task 3.3.0 2/8/2025 19:12:03]
-news.version=3.3.0
+# set to non-existing version to disable `task news` notification at every taskwarrior call
+news.version=4.0.0
 
 data.location=~/.local/share/task
 hooks.location=~/.config/task/hooks
