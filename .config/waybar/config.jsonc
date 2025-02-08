@@ -119,5 +119,12 @@
         "interval": 10,
         "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader",
         "tooltip": false
+    },
+    "custom/taskwarrior": {
+      "format": "{}",
+      "return-type": "json",
+      "max-length": 30,
+      "interval": 5,
+      "exec": "$HOME/.config/waybar/scripts/taskwarrior.sh 2> /dev/null"
     }
 }
