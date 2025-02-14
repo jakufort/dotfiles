@@ -4,7 +4,8 @@
     "height": 40,
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap"
+        "hyprland/submap",
+        "custom/taskwarrior"
     ],
     "modules-center": [
         "custom/music"
@@ -82,7 +83,7 @@
         },
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
     },
     "clock": {
         "format": "{:%d.%m.%Y %H:%M}",

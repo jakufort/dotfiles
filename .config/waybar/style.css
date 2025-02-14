@@ -95,3 +95,10 @@ window#waybar {
     margin: 3px;
     padding: 0 10px;
 }
+
+#custom-taskwarrior {
+  background-color: @background;
+  padding: 0 15px;
+  margin: 3px;
+  border-radius: 20px;
+}

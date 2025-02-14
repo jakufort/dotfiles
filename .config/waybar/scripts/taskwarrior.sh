@@ -1,7 +1,10 @@
 #!/bin/sh
 
-current_task=$(task export active | jq '.[] | .description')
+name=$(task export active | jq -r '.[] | .description')
 
-task_shorten="${current_task:0:20}"
+if [[ -z "${name}" ]]; then
+  echo '{"text":""}'
+  return 0
+fi
 
-echo '{"text": " '$task_shorten'", "tooltip": "'$current_task'"}'
+echo '{"text": " '$name'", "tooltip": "'$name'"}'
