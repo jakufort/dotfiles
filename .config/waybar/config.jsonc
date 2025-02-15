@@ -125,7 +125,7 @@
       "format": "{}",
       "return-type": "json",
       "max-length": 30,
-      "interval": 5,
+      "interval": 10,
       "exec": "$HOME/.config/waybar/scripts/taskwarrior.sh 2> /dev/null"
     }
 }

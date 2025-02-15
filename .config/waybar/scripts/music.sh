@@ -11,13 +11,13 @@ while true; do
 
 		# build line
 		line="${artist:+$artist ${title:+- }}${title:+$title}"
-        artist_trunc=$(echo "${artist}" | sed 's/\(.\{30\}\).*/\1.../')
-        title_trunc=$(echo "${title}" | sed 's/\(.\{30\}\).*/\1.../')
-        line_truncated="${artist_trunc:+$artist_trunc ${title_trunc:+- }}${title_trunc:+$title_trunc}"
+    artist_trunc=$(echo "${artist}" | sed 's/\(.\{30\}\).*/\1.../')
+    title_trunc=$(echo "${title}" | sed 's/\(.\{30\}\).*/\1.../')
+    line_truncated="${artist_trunc:+$artist_trunc ${title_trunc:+- }}${title_trunc:+$title_trunc}"
 
 		# json escaping
 		line="${line//\"/\\\"}"
-        line_truncated="${line_truncated//\"/\\\"}"
+    line_truncated="${line_truncated//\"/\\\"}"
 
 		((percentage = length ? (100 * (position % length)) / length : 0))
 		case $playing in
@@ -33,6 +33,7 @@ while true; do
 			ptitle=$title partist=$artist parturl=$arturl
 		fi
 
+
 		# exit if print fails
 		printf '{"text":"%s","tooltip":"%s","class":"%s","percentage":%s}\n' \
 			"$text" "$line" "$percentage" "$percentage" || break 2
@@ -41,7 +42,7 @@ while true; do
 		# requires playerctl>=2.0
 		# Add non-space character ":" before each parameter to prevent 'read' from skipping over them
 		playerctl --follow metadata --player playerctld --format \
-			$':{{emoji(status)}}\t:{{position}}\t:{{mpris:length}}\t:{{playerName}}\t:{{markup_escape(artist)}}\t:{{markup_escape(title)}}\t:{{mpris:artUrl}}\t:{{duration(position)}}\t:{{duration(mpris:length)}}' &
+			$':{{emoji(status)}}\t:{{position}}\t:{{mpris:length}}\t:{{playerName}}\t:{{artist}}\t:{{title}}\t:{{mpris:artUrl}}\t:{{duration(position)}}\t:{{duration(mpris:length)}}' &
 		echo $! >"$XDG_RUNTIME_DIR/waybar-playerctl.pid"
 	)
 
