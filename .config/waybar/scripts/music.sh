@@ -23,7 +23,7 @@ while true; do
 		case $playing in
 		⏸️ | Paused) text="󰏤 $line_truncated" ;;
 		▶️ | Playing) text=" $line_truncated" ;;
-		*) text='no music' ;;
+		*) text='' ;;
 		esac
 
 		# integrations for other services (nwg-wrapper)

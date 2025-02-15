@@ -113,7 +113,8 @@
         "format": "{}",
         "return-type": "json",
         "max-length": 60,
-        "exec": "$HOME/.config/waybar/scripts/music.sh 2> /dev/null"
+        "exec": "$HOME/.config/waybar/scripts/music.sh 2> /dev/null",
+        "escape": true
     },
     "custom/gputemp": {
         "format": "󰢮 {}°C",
