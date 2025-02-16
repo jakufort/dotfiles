@@ -18,6 +18,11 @@ gsimplecal
 git-crypt
 wezterm
 nordvpn-bin
+task
+timewarrior
+tlrc-bin
+fastfetch
+playerctl
 
 # gui
 flameshot
@@ -30,7 +35,6 @@ rofi
 polybar
 snixembed
 redshift
-playerctl
 
 # hyprland
 hyprland
