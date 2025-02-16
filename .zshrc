@@ -18,6 +18,7 @@ alias ls=eza
 alias xl='eza -lg --icons --color=always'
 alias xll='eza -lag --icons --color=always'
 alias cat=bat
+alias grep=rg
 
 ### FZF
 source /usr/share/fzf/key-bindings.zsh
@@ -26,3 +27,5 @@ source /usr/share/fzf/completion.zsh
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
+
+export EDITOR=nvim
