@@ -29,3 +29,4 @@ eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 
 export EDITOR=nvim
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
