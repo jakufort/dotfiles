@@ -1,7 +1,3 @@
-@define-color foreground #d1d6d7;
-@define-color background #666666;
-@define-color workspace-selector #666666;
-@define-color submap #A39D6A;
 @define-color bar #404040;
 
 * {
@@ -23,10 +19,10 @@ window#waybar {
 #custom-gputemp,
 #pulseaudio,
 #clock,
-#custom-music {
-    color: @foreground;
-    background-color: @background;
-    /* opacity: 0.9; */
+#custom-music,
+#custom-taskwarrior {
+    color: #d1d6d7;
+    background-color: @bar;
 }
 
 #disk,
@@ -56,7 +52,6 @@ window#waybar {
 
 #workspaces {
     margin: 3px;
-    background-color: @bar;
     border-radius: 20px;
     margin-left: 20px;
 }
@@ -67,7 +62,7 @@ window#waybar {
 
 #workspaces button:hover,
 #workspaces button.active {
-    background-color: @workspace-selector;
+    background-color: #666666;
     border-radius: 0px;
     border-width: 0px;
 }
@@ -83,21 +78,19 @@ window#waybar {
 }
 
 #custom-music {
-    background-color: @background;
     padding: 0 15px;
     margin: 3px;
     border-radius: 20px;
 }
 
 #submap {
-    background-color: @submap;
+    background-color: #A39D6A;
     border-radius: 20px;
     margin: 3px;
     padding: 0 10px;
 }
 
 #custom-taskwarrior {
-  background-color: @background;
   padding: 0 15px;
   margin: 3px;
   border-radius: 20px;
