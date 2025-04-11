@@ -1,10 +1,10 @@
 fzf
 jq
-htop
+btop
 cheat-bin
 ttf-jetbrains-mono-nerd
 ripgrep
-gitui
+lazygit
 neovim
 mise-bin
 cmus
@@ -12,7 +12,7 @@ cmusfm
 starship
 eza
 bat
-zsh
+fish
 zoxide
 gsimplecal
 git-crypt
@@ -23,9 +23,6 @@ timewarrior
 tlrc-bin
 fastfetch
 playerctl
-
-# gui
-flameshot
 
 # i3
 i3
