@@ -28,5 +28,8 @@ function fish_ssh_agent --description "Start ssh-agent if not started yet, or us
 
    if not __ssh_agent_is_started
       __ssh_agent_start
+      for key in $argv
+        ssh-add ~/.ssh/$key
+      end
    end
 end

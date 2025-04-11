@@ -26,5 +26,5 @@ if status is-interactive
   variables
   tools
 
-  fish_ssh_agent
+  fish_ssh_agent id_ed25519
 end
