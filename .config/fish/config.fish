@@ -1,10 +1,9 @@
 function aliases
   alias vim=nvim
-  alias ls=eza
-  alias xl='eza -lg --icons --color=always'
-  alias xll='exa -lag --icons --color=always'
   alias cat=bat
   alias grep=rg
+  abbr ls 'eza -lg --icons --color=always'
+  abbr ll 'exa -lag --icons --color=always'
 end
 
 function variables
@@ -27,4 +26,6 @@ if status is-interactive
   tools
 
   fish_ssh_agent id_ed25519
+
+  fish_config theme choose rose-pine-moon
 end
