@@ -26,3 +26,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- comment under (alt|cmd) + /
+vim.keymap.set('n', '<M-/>', 'gcc', { desc = 'Comment out line', remap = true })
+vim.keymap.set('v', '<M-/>', 'gcc', { desc = 'Commend visual block', remap = true })
+
+-- remove line under (alt|cmd) + y
+vim.keymap.set({ 'n', 'i' }, '<M-y>', function()
+  vim.cmd.norm('dd')
+end, { desc = 'Delete line' })
