@@ -1,0 +1,18 @@
+# Auth with polkit-gnome:
+exec /usr/lib/polkit-kde-authentication-agent-1
+
+# Desktop notifications
+exec dunst
+
+exec $HOME/.config/sway/scripts/random-wallpaper.sh
+# exec waybar
+exec /usr/bin/firefox
+exec org.signal.Signal
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+# GTK3 applications take a long time to start
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+     
