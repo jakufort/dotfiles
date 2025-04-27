@@ -135,7 +135,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+e exec dolphin
 
 # screenshot
-bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
+bindsym print exec /usr/share/sway-contrib/grimshot --notify copy area
 bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
 
 # blue light
