@@ -3,8 +3,8 @@
     "position": "bottom",
     "height": 40,
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
+        "hyprland/workspaces",
+        "hyprland/submap",
         "custom/taskwarrior"
     ],
     "modules-center": [
@@ -20,7 +20,7 @@
         "clock",
         "tray"
     ],
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "disable-markup": false,
         "all-outputs": true,
@@ -32,7 +32,7 @@
             "5": "5 󰎆 "
         }
     },
-    "sway/mode": {
+    "hyprland/submap": {
         "format": "{}",
         "max-length": 100,
         "tooltip": false

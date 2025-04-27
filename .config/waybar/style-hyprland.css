@@ -61,7 +61,7 @@ window#waybar {
 }
 
 #workspaces button:hover,
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #666666;
     border-radius: 0px;
     border-width: 0px;
@@ -83,7 +83,7 @@ window#waybar {
     border-radius: 20px;
 }
 
-#mode {
+#submap {
     background-color: #A39D6A;
     border-radius: 20px;
     margin: 3px;
