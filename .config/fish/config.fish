@@ -14,7 +14,7 @@ end
 function tools
   fzf --fish | source
   starship init fish | source
-  mise activate fish | source
+  ~/.local/bin/mise activate fish | source
   zoxide init fish | source
 end
 
