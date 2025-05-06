@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 
 local config = {}
 
@@ -9,25 +9,25 @@ end
 config.font_size = 18
 
 config.color_scheme = 'rose-pine-moon'
-config.font = wezterm.font 'JetBrains Mono NL'
+config.font = wezterm.font('JetBrains Mono NL')
 config.window_background_opacity = 0.9
 config.hide_tab_bar_if_only_one_tab = true
 
 config.keys = {
- {
-   key = 'n',
-   mods = 'ALT',
-   action = wezterm.action.SplitHorizontal {
-     domain = 'CurrentPaneDomain'
-   }
- },
- {
-   key = 'n',
-   mods = 'ALT|SHIFT',
-   action = wezterm.action.SplitVertical {
-     domain = 'CurrentPaneDomain'
-   }
- }
+  {
+    key = 'n',
+    mods = 'SUPER',
+    action = wezterm.action.SplitHorizontal({
+      domain = 'CurrentPaneDomain',
+    }),
+  },
+  {
+    key = 'n',
+    mods = 'SUPER|SHIFT',
+    action = wezterm.action.SplitVertical({
+      domain = 'CurrentPaneDomain',
+    }),
+  },
 }
 
 config.colors = {
@@ -37,9 +37,9 @@ config.colors = {
 
 config.inactive_pane_hsb = {
   saturation = 0.4,
-  brightness=  0.4,
+  brightness = 0.4,
 }
 
-config.enable_wayland = false
+config.enable_wayland = true
 
 return config
