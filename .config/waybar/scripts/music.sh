@@ -11,13 +11,13 @@ while true; do
 
 		# build line
 		line="${artist:+$artist ${title:+- }}${title:+$title}"
-    artist_trunc=$(echo "${artist}" | sed 's/\(.\{30\}\).*/\1.../')
-    title_trunc=$(echo "${title}" | sed 's/\(.\{30\}\).*/\1.../')
-    line_truncated="${artist_trunc:+$artist_trunc ${title_trunc:+- }}${title_trunc:+$title_trunc}"
+		artist_trunc=$(echo "${artist}" | sed 's/\(.\{30\}\).*/\1.../')
+		title_trunc=$(echo "${title}" | sed 's/\(.\{30\}\).*/\1.../')
+		line_truncated="${artist_trunc:+$artist_trunc ${title_trunc:+- }}${title_trunc:+$title_trunc}"
 
 		# json escaping
 		line="${line//\"/\\\"}"
-    line_truncated="${line_truncated//\"/\\\"}"
+		line_truncated="${line_truncated//\"/\\\"}"
 
 		((percentage = length ? (100 * (position % length)) / length : 0))
 		case $playing in
@@ -32,7 +32,6 @@ while true; do
 			pkill -8 nwg-wrapper
 			ptitle=$title partist=$artist parturl=$arturl
 		fi
-
 
 		# exit if print fails
 		printf '{"text":"%s","tooltip":"%s","class":"%s","percentage":%s}\n' \
