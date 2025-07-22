@@ -5,6 +5,9 @@ for_window [app_id="firefox"] focus
 assign [class="firefox"] 1
 for_window [class="firefox"] focus
 
+assign [app_id="Signal"] 3
+for_window [app_id="Signal"] focus
+
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
 for_window [app_id="yad"] floating enable
