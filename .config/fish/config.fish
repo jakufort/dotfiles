@@ -9,6 +9,7 @@ end
 function variables
   set -xg EDITOR nvim
   set -xg RIPGREP_CONFIG_PATH ~/.config/ripgrep/config
+  set -xg MANPAGER "nvim +Man!"
 end
 
 function tools
