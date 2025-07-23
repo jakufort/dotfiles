@@ -31,7 +31,6 @@ yay --sudoloop -S \
 	sway \
 	swaygb \
 	cliphist \
-	wofi \
 	waybar \
 	grimshot \
 	gammastep \
@@ -41,7 +40,8 @@ yay --sudoloop -S \
 	asunder \
 	kid3 \
 	mpv \
-	jetbrains-toolbox
+	jetbrains-toolbox \
+	tofi
 
 echo "installing mise"
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x7413A06D

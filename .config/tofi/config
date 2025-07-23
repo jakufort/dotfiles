@@ -1,0 +1,12 @@
+# Catppuccin Mocha
+text-color = #cdd6f4
+prompt-color = #f38ba8
+selection-color = #f9e2af
+background-color = #1e1e2e
+
+border-color = #1e1e2e
+outline-color = #1e1e2e
+
+font = "/usr/share/fonts/TTF/JetBrainsMonoNerdFontMono-Medium.ttf"
+
+font-size = 24

@@ -8,7 +8,7 @@ set $right Right
 
 bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec wofi -c ~/.config/wofi/config -I
+bindsym $mod+d exec tofi-drun | xargs swaymsg exec --
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
