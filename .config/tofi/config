@@ -9,4 +9,7 @@ outline-color = #1e1e2e
 
 font = "/usr/share/fonts/TTF/JetBrainsMonoNerdFontMono-Medium.ttf"
 
-font-size = 24
+font-size = 18
+
+width = 800
+height = 600
