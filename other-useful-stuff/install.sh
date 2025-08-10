@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo "installing yay"
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+echo "installing paru"
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && rm -rf paru
 
 echo "installing packages"
-yay --sudoloop -S \
+paru -S \
 	fzf \
 	stow \
 	curl \
@@ -50,4 +50,10 @@ sh ./mise-install.sh
 rm mise-install.sh
 
 echo "installing flatpaks"
-flatpak install com.calibre_ebook.calibre com.github.tchx84.Flatseal dev.vencord.Vesktop fr.handbrake.ghb md.obsidian.Obsidian org.signal.Signal
+flatpak install \
+	com.calibre_ebook.calibre \
+	com.github.tchx84.Flatseal \
+	dev.vencord.Vesktop \
+	fr.handbrake.ghb \
+	md.obsidian.Obsidian \
+	org.signal.Signal
