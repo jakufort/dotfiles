@@ -133,7 +133,7 @@
     "custom/todos": {
         "format": "{}",
         "return-type": "json",
-        "interval": 5,
+        "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/todos.sh 2> /dev/null"
     }
 }
