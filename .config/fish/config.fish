@@ -17,6 +17,8 @@ function tools
   starship init fish | source
   ~/.local/bin/mise activate fish | source
   zoxide init fish | source
+
+  fish_add_path ~/.local/share/JetBrains/Toolbox/scripts
 end
 
 if status is-interactive
@@ -29,4 +31,8 @@ if status is-interactive
   fish_ssh_agent id_ed25519
 
   fish_config theme choose rose-pine-moon
+else
+  ~/.local/bin/mise activate fish --shims | source
+
+  set -xg JAVA_HOME (~/.local/bin/mise where java)
 end
