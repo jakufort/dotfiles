@@ -41,7 +41,11 @@ paru -S \
 	kid3 \
 	mpv \
 	jetbrains-toolbox \
-	tofi
+	tofi \
+	mpd \
+	rmpc \
+	mpd-mpris \
+	mpdscribble
 
 echo "installing mise"
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x7413A06D
@@ -56,4 +60,6 @@ flatpak install \
 	dev.vencord.Vesktop \
 	fr.handbrake.ghb \
 	md.obsidian.Obsidian \
-	org.signal.Signal
+	org.signal.Signal \
+	com.protonvpn.www \
+	com.spotify.Client
