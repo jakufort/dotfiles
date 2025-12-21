@@ -1,3 +1,6 @@
+command_timeout = 500
+scan_timeout = 1000
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
@@ -145,6 +148,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [pijul_channel]
+disabled = true
 format = '\[[$symbol$channel]($style)\]'
 
 [pulumi]
