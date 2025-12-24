@@ -20,7 +20,8 @@ window#waybar {
 #pulseaudio,
 #clock,
 #custom-music,
-#custom-taskwarrior {
+#custom-taskwarrior,
+#custom-todos {
     color: #d1d6d7;
     background-color: @bar;
 }
