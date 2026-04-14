@@ -36,6 +36,8 @@ format = '\[[$symbol($version)]($style)\]'
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
+only_with_files = true
+detect_files = ['compose.yml', 'compose.yaml', 'docker-compose.yml', 'docker-compose.yaml', 'Dockerfile', '*-compose.yaml']
 
 [dotnet]
 format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
