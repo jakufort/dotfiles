@@ -23,12 +23,9 @@ paru -S \
 	zoxide \
 	gsimplecal \
 	git-crypt \
-	wezterm-git \
-	nordvpn-bin \
 	tlrc-bin \
 	fastfetch \
 	playerctl \
-	sway \
 	swaygb \
 	cliphist \
 	waybar \
@@ -37,15 +34,12 @@ paru -S \
 	luarocks \
 	btop \
 	flatpak \
-	asunder \
 	kid3 \
 	mpv \
 	jetbrains-toolbox \
 	tofi \
-	mpd \
-	rmpc \
-	mpd-mpris \
-	mpdscribble
+	flameshot \
+	ghostty
 
 echo "installing mise"
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x7413A06D
