@@ -103,7 +103,7 @@ hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 'Q', hl.dsp.window.close())
 hl.bind(mainMod .. ' + ' .. 'M', hl.dsp.exit())
 hl.bind(mainMod .. ' + ' .. 'E', hl.dsp.exec_cmd('dolphin'))
 hl.bind(mainMod .. ' + ' .. 'V', hl.dsp.window.float())
-hl.bind(mainMod .. ' + ' .. 'D', hl.dsp.exec_cmd('tofi-drun | xargs hyprctl dispatch exec --'))
+hl.bind(mainMod .. ' + D', hl.dsp.exec_cmd('tofi-drun --drun-launch=true'))
 hl.bind(mainMod .. ' + ' .. 'P', hl.dsp.window.pseudo())
 
 -- dwindle
