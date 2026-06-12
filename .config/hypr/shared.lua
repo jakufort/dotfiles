@@ -96,15 +96,24 @@ hl.config({
   },
 })
 
-local mainMod = 'SUPER'
+local function mainMod(...)
+  local args = { ... }
+  table.insert(args, 1, 'SUPER')
+  return table.concat(args, ' + ')
+end
 
-hl.bind(mainMod .. ' + ' .. 'return', hl.dsp.exec_cmd('ghostty'))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 'Q', hl.dsp.window.close())
-hl.bind(mainMod .. ' + ' .. 'M', hl.dsp.exit())
-hl.bind(mainMod .. ' + ' .. 'E', hl.dsp.exec_cmd('dolphin'))
-hl.bind(mainMod .. ' + ' .. 'V', hl.dsp.window.float())
-hl.bind(mainMod .. ' + D', hl.dsp.exec_cmd('tofi-drun --drun-launch=true'))
-hl.bind(mainMod .. ' + ' .. 'P', hl.dsp.window.pseudo())
+local function modBind(action, ...)
+  local bind = mainMod(...)
+  hl.bind(bind, action)
+end
+
+modBind(hl.dsp.exec_cmd('ghostty'), 'return')
+modBind(hl.dsp.window.close(), 'SHIFT', 'Q')
+modBind(hl.dsp.exit(), 'M')
+modBind(hl.dsp.exec_cmd('dolphin'), 'E')
+modBind(hl.dsp.window.float(), 'V')
+modBind(hl.dsp.exec_cmd('tofi-drun --drun-launch=true'), 'D')
+modBind(hl.dsp.window.pseudo(), 'P')
 
 -- dwindle
 
@@ -114,41 +123,26 @@ hl.bind(mainMod .. ' + ' .. 'P', hl.dsp.window.pseudo())
 -- bind = $mainMod, up, movefocus, u
 -- bind = $mainMod, down, movefocus, d
 
-hl.bind(mainMod .. ' + ' .. 1, hl.dsp.focus({ workspace = 1 }))
-hl.bind(mainMod .. ' + ' .. 2, hl.dsp.focus({ workspace = 2 }))
-hl.bind(mainMod .. ' + ' .. 3, hl.dsp.focus({ workspace = 3 }))
-hl.bind(mainMod .. ' + ' .. 4, hl.dsp.focus({ workspace = 4 }))
-hl.bind(mainMod .. ' + ' .. 5, hl.dsp.focus({ workspace = 5 }))
-hl.bind(mainMod .. ' + ' .. 6, hl.dsp.focus({ workspace = 6 }))
-hl.bind(mainMod .. ' + ' .. 7, hl.dsp.focus({ workspace = 7 }))
-hl.bind(mainMod .. ' + ' .. 8, hl.dsp.focus({ workspace = 8 }))
-hl.bind(mainMod .. ' + ' .. 9, hl.dsp.focus({ workspace = 9 }))
-hl.bind(mainMod .. ' + ' .. 0, hl.dsp.focus({ workspace = 10 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 1, hl.dsp.window.move({ workspace = 1 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 2, hl.dsp.window.move({ workspace = 2 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 3, hl.dsp.window.move({ workspace = 3 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 4, hl.dsp.window.move({ workspace = 4 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 5, hl.dsp.window.move({ workspace = 5 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 6, hl.dsp.window.move({ workspace = 6 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 7, hl.dsp.window.move({ workspace = 7 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 8, hl.dsp.window.move({ workspace = 8 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 9, hl.dsp.window.move({ workspace = 9 }))
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 0, hl.dsp.window.move({ workspace = 10 }))
+for i = 1, 10 do
+  local key = tostring(i % 10)
+  modBind(hl.dsp.focus({ workspace = i }), key)
+  modBind(hl.dsp.window.move({ workspace = i }), 'SHIFT', key)
+end
 
 -- Example special workspace (scratchpad)
 -- hl.bind(mainMod .. ' + ' .. 'S', hl.dsp.workspace.toggle_special('magic'))
 -- hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 'S', hl.dsp.window.move('special:magic'))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. ' + ' .. 'mouse_down', hl.dsp.focus({ workspace = 'e+1' }))
-hl.bind(mainMod .. ' + ' .. 'mouse_up', hl.dsp.focus({ workspace = 'e-1' }))
+modBind(hl.dsp.focus({ workspace = 'e+1' }), 'mouse_down')
+modBind(hl.dsp.focus({ workspace = 'e-1' }), 'mouse_up')
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. ' + ' .. 'mouse:272', hl.dsp.window.drag(), { mouse = true })
-hl.bind(mainMod .. ' + ' .. 'mouse:273', hl.dsp.window.resize(), { mouse = true })
+hl.bind(mainMod('mouse:272'), hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod('mouse:273'), hl.dsp.window.resize(), { mouse = true })
 
 -- poweroff submap
-hl.bind(mainMod .. ' + ' .. 'SHIFT' .. ' + ' .. 'E', hl.dsp.submap('(l)ougout (r)eboot (p)oweroff'))
+hl.bind(mainMod('SHIFT', 'E'), hl.dsp.submap('(l)ougout (r)eboot (p)oweroff'))
 hl.define_submap('(l)ougout (r)eboot (p)oweroff', function()
   hl.bind('R', hl.dsp.exec_cmd('systemctl reboot'))
   hl.bind('L', hl.dsp.exec_cmd('hyprctl dispatch exit'))
@@ -167,7 +161,7 @@ hl.bind('XF86AudioNext', hl.dsp.exec_cmd('playerctl next'))
 hl.bind('XF86AudioPrev', hl.dsp.exec_cmd('playerctl previous'))
 
 -- blue light filter mapping
-hl.bind(mainMod .. ' + ' .. 'C', hl.dsp.exec_cmd('hyprshade toggle blue-light-filter'))
+modBind(hl.dsp.exec_cmd('hyprshade toggle blue-light-filter'), 'C')
 
 -- screenshot
 -- bind = , PRINT, exec, hyprshot -m region --clipboard-only
