@@ -165,7 +165,7 @@ modBind(hl.dsp.exec_cmd('hyprshade toggle blue-light-filter'), 'C')
 
 -- screenshot
 -- bind = , PRINT, exec, hyprshot -m region --clipboard-only
-hl.bind('PRINT', hl.dsp.exec_cmd('QT_SCREEN_SCALE_FACTORS=1;1 flameshot gui --raw| wl-copy'))
+hl.bind('Print', hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
 
 -- window rules
 hl.window_rule({
