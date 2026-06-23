@@ -38,8 +38,10 @@ paru -S \
 	mpv \
 	jetbrains-toolbox \
 	tofi \
-	flameshot \
-	ghostty
+	ghostty \
+	grim \
+	slurp \
+	satty
 
 echo "installing mise"
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x7413A06D
