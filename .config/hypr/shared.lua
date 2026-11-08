@@ -188,7 +188,7 @@ hl.window_rule({
 -- Autostart
 hl.on('hyprland.start', function()
   hl.exec_cmd('dunst')
-  hl.exec_cmd(os.getenv('HOME') .. '/.config/hypr/scripts/random-wallpaper.sh')
+  hl.exec_cmd('hyprpaper')
   hl.exec_cmd('waybar')
   hl.exec_cmd('/usr/bin/firefox')
   hl.exec_cmd('/usr/lib/polkit-kde-authentication-agent-1')
