@@ -41,6 +41,7 @@ paru -S \
 	ghostty \
 	grim \
 	slurp \
+	satty \
 	whipper
 
 echo "installing mise"
